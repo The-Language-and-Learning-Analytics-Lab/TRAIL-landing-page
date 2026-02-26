@@ -459,114 +459,108 @@ nav .container {
     text-align: center;
 }
 
-.team-section-title {
-    font-size: 18px;
-    font-weight: 600;
-    color: var(--text);
-    margin-bottom: 32px;
-}
-
-/* Leadership Grid */
-.leadership-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 48px;
-    margin-bottom: 64px;
-}
-
-.leader-card {
+.team-lead {
     display: flex;
+    justify-content: center;
+    margin-bottom: 48px;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
     gap: 24px;
-    align-items: flex-start;
-}
-
-.leader-photo {
-    flex-shrink: 0;
-}
-
-.leader-photo .photo-placeholder {
-    width: 160px;
-    height: 200px;
-    background: linear-gradient(135deg, var(--accent-light) 0%, var(--border) 100%);
-    border-radius: var(--radius);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 48px;
-    font-weight: 600;
-    color: var(--accent);
-}
-
-.leader-info {
-    padding-top: 8px;
-}
-
-.leader-info h4 {
-    font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 12px;
-}
-
-.leader-info h4 a {
-    color: var(--accent);
-    text-decoration: none;
-}
-
-.leader-info h4 a:hover {
-    text-decoration: underline;
-}
-
-.leader-role {
-    font-size: 15px;
-    color: var(--text);
-    margin-bottom: 8px;
-}
-
-.leader-affiliation {
-    font-size: 14px;
-    color: var(--text-secondary);
-}
-
-/* Students Grid */
-.students-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 32px;
-}
-
-.student-card {
-    text-align: center;
-}
-
-.student-photo {
-    margin-bottom: 16px;
-}
-
-.student-photo .photo-placeholder {
-    width: 100%;
-    aspect-ratio: 1;
-    max-width: 180px;
+    max-width: 900px;
     margin: 0 auto;
-    background: linear-gradient(135deg, var(--accent-light) 0%, var(--border) 100%);
-    border-radius: var(--radius);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 36px;
-    font-weight: 600;
-    color: var(--accent);
+}
+
+.team-member {
+    text-align: center;
     transition: all 0.3s ease;
 }
 
-.student-card:hover .photo-placeholder {
+.team-member:hover {
     transform: translateY(-4px);
-    box-shadow: var(--shadow-lg);
 }
 
-.student-name {
-    font-size: 15px;
-    font-weight: 500;
+.team-member:hover .member-avatar {
+    box-shadow: var(--shadow-lg);
+    border-color: var(--accent);
+}
+
+.member-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+    font-size: 24px;
+    font-weight: 600;
+    color: white;
+    border: 3px solid var(--border);
+    transition: all 0.3s ease;
+}
+
+.team-member.lead .member-avatar {
+    width: 120px;
+    height: 120px;
+    font-size: 32px;
+    border-width: 4px;
+    border-color: var(--accent);
+}
+
+.member-info h3 {
+    font-size: 14px;
+    font-weight: 600;
     color: var(--text);
+    margin-bottom: 4px;
+}
+
+.team-member.lead .member-info h3 {
+    font-size: 18px;
+}
+
+.member-info .role {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--accent);
+    margin-bottom: 2px;
+}
+
+.team-member.lead .member-info .role {
+    font-size: 14px;
+}
+
+.member-info .affiliation {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.team-member.lead .member-info .affiliation {
+    font-size: 12px;
+}
+
+.member-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 20px;
+    background: var(--accent-light);
+    transition: all 0.2s ease;
+}
+
+.member-link:hover {
+    background: var(--accent);
+    color: white;
 }
 
 /* Contact Section */
@@ -693,14 +687,9 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    .leadership-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-
-    .students-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 24px;
+    .team-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
     }
 
     .hero h1 {
@@ -719,37 +708,39 @@ footer {
 }
 
 @media (max-width: 600px) {
-    .leader-card {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .leader-photo .photo-placeholder {
-        width: 140px;
-        height: 175px;
-        margin: 0 auto;
-        font-size: 40px;
-    }
-
-    .leader-info {
-        padding-top: 0;
-    }
-
-    .leader-info h4 {
-        font-size: 18px;
-    }
-
-    .students-grid {
+    .team-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
+        gap: 16px;
     }
 
-    .student-photo .photo-placeholder {
+    .member-avatar {
+        width: 64px;
+        height: 64px;
+        font-size: 20px;
+    }
+
+    .team-member.lead .member-avatar {
+        width: 100px;
+        height: 100px;
         font-size: 28px;
     }
 
-    .student-name {
-        font-size: 14px;
+    .member-info h3 {
+        font-size: 13px;
+    }
+
+    .member-info .role {
+        font-size: 11px;
+    }
+
+    .member-info .affiliation {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 400px) {
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
