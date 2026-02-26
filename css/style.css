@@ -462,32 +462,14 @@ nav .container {
 .team-lead {
     display: flex;
     justify-content: center;
-    align-items: stretch;
     gap: 80px;
     margin-bottom: 56px;
 }
 
-.team-lead .team-member {
-    width: 200px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.team-lead .member-info {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.team-lead .member-link {
-    margin-top: auto;
-}
-
 .team-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 24px;
+    display: flex;
+    justify-content: center;
+    gap: 48px;
     max-width: 900px;
     margin: 0 auto;
 }
@@ -707,8 +689,8 @@ footer {
     }
 
     .team-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
+        flex-wrap: wrap;
+        gap: 24px;
     }
 
     .hero h1 {
@@ -728,7 +710,6 @@ footer {
 
 @media (max-width: 600px) {
     .team-grid {
-        grid-template-columns: repeat(2, 1fr);
         gap: 16px;
     }
 
@@ -757,11 +738,6 @@ footer {
     }
 }
 
-@media (max-width: 400px) {
-    .team-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
 
 @media (max-width: 600px) {
     .container {
