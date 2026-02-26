@@ -502,16 +502,26 @@ nav .container {
 .team-lead {
     display: flex;
     justify-content: center;
+    align-items: flex-start;
     gap: 80px;
     margin-bottom: 56px;
+}
+
+.team-member.lead {
+    width: 240px;
 }
 
 .team-grid {
     display: flex;
     justify-content: center;
+    align-items: flex-start;
     gap: 48px;
     max-width: 900px;
     margin: 0 auto;
+}
+
+.team-grid .team-member {
+    width: 150px;
 }
 
 .team-member {
