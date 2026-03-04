@@ -415,7 +415,8 @@ nav .container {
     margin-bottom: 12px;
 }
 
-.pub-list a {
+.pub-list a,
+.pub-list li:not(:has(a)) {
     display: flex;
     justify-content: space-between;
     align-items: center;
