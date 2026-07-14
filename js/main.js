@@ -1,27 +1,7 @@
-// Dark mode toggle
 document.addEventListener('DOMContentLoaded', () => {
-    initDarkMode();
     initSmoothScroll();
     initNavHighlight();
 });
-
-function initDarkMode() {
-    const toggle = document.querySelector('.theme-toggle');
-    const savedTheme = localStorage.getItem('theme');
-    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-    if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
-        document.documentElement.setAttribute('data-theme', 'dark');
-    }
-
-    if (toggle) {
-        toggle.addEventListener('click', () => {
-            const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-            document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
-            localStorage.setItem('theme', isDark ? 'light' : 'dark');
-        });
-    }
-}
 
 function initSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
